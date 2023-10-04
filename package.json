@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "jest --passWithNoTests --maxWorkers=50%",
+    "test": "jest --passWithNoTests --maxWorkers=100%",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
     "generate": "npx plop --plopfile generators/plopfile.js",
@@ -23,8 +23,11 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.47.0",
     "styled-components": "^6.0.7",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "zod": "^3.22.3",
+    "zustand": "^4.4.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.0",
