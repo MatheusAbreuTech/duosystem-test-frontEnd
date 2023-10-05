@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -9,6 +10,15 @@ export const List = styled.ul`
   list-style: none;
 `
 
+// interface DescriptionProps {
+//   taskisfinished: boolean
+// }
+
+interface CheckedTaskButton {
+  children: React.ReactNode
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
 export const Item = styled.li`
   height: 4.2rem;
   width: 100%;
@@ -19,11 +29,10 @@ export const Item = styled.li`
   background: #fff;
   border-radius: 5px;
   padding: 0 1rem;
-  color: #0c2e73;
-  font-size: 1.8rem;
+  margin: 1rem 0;
 `
 
-export const CheckedTaskButton = styled.button`
+export const CheckedTaskButton = styled.button<CheckedTaskButton>`
   background-color: #0c2e73;
   height: 2.4rem;
   width: 9.4rem;
@@ -31,4 +40,11 @@ export const CheckedTaskButton = styled.button`
   border-radius: 3px;
   color: #fff;
   text-transform: uppercase;
+`
+export const Description = styled.p`
+  font-size: 1.8rem;
+  /* font-style: ${(props) => (props.taskisfinished ? 'italic' : 'normal')}; */
+  color: #0c2e73;
+  /* text-decoration: ${(props) =>
+    props.taskisfinished ? 'line-through' : 'none'}; */
 `

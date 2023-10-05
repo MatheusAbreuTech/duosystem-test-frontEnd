@@ -1,23 +1,21 @@
 'use client'
 
 import * as S from './styles'
+// import useTaskStore from '@/store/zustand'
 
-type Task = {
-  text: string
-  id: number
-}
-
-type TaskListProps = {
-  tasks: Task[]
-}
-
-const TaskList = ({ tasks }: TaskListProps) => {
+const TaskList = () => {
+  // const { taskList, changeTaskStatusById } = useTaskStore()
+  const taskList = [{ id: 1, description: 'tarefa', status: false }]
   return (
     <S.Wrapper>
+      <h1>TaskList</h1>
       <S.List>
-        {tasks.map((task) => (
+        {taskList.map((task) => (
           <S.Item key={task.id}>
-            {task.text} <S.CheckedTaskButton>Concluir</S.CheckedTaskButton>
+            <S.Description>{task.description}</S.Description>
+            <S.CheckedTaskButton onClick={() => console.log(task.id)}>
+              Concluir
+            </S.CheckedTaskButton>
           </S.Item>
         ))}
       </S.List>

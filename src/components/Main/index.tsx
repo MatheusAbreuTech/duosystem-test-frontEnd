@@ -1,20 +1,23 @@
 import SearchTask from '../SearchTask'
 import TaskList from '../TaskList'
 import * as S from './styles'
+import AddTask from '../AddTask'
 
-const Main = () => (
-  <S.Wrapper>
-    <S.Title>Lista de tarefas</S.Title>
+const Main = () => {
+  return (
+    <S.Wrapper>
+      <S.Title>Lista de tarefas</S.Title>
 
-    {/* input de pesquisa */}
-    <SearchTask />
+      {/* input de pesquisa */}
+      <SearchTask />
 
-    {/* listagem */}
-    <TaskList tasks={[{ id: 1, text: 'tarefa 1' }]} />
+      {/* listagem */}
+      <TaskList />
 
-    {/* botao para adicionar umas task */}
-    <button>Adicionar task</button>
-  </S.Wrapper>
-)
+      {/* botao para adicionar umas task */}
+      <AddTask />
+    </S.Wrapper>
+  )
+}
 
 export default Main
