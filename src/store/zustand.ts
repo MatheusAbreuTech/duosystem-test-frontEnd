@@ -1,16 +1,15 @@
-import { Task } from '@/types/Task'
+import { TaskStore } from '@/types/TaskStore'
 import { create } from 'zustand'
-
-type TaskStore = {
-  taskList: Task[]
-  addTask: (description: string) => void
-  removeTaskById: (taskId: number) => void
-  changeTaskStatusById: (taskId: number) => void
-}
 
 const useTaskStore = create<TaskStore>((set) => {
   return {
     taskList: [],
+    searchValue: '',
+    searchTasksByDescription: (description) => {
+      set(() => ({
+        searchValue: description
+      }))
+    },
     addTask: (description) =>
       set((state) => ({
         taskList: [
@@ -18,7 +17,8 @@ const useTaskStore = create<TaskStore>((set) => {
           {
             id: state.taskList.length + 1,
             description: description,
-            status: false
+            status: false,
+            createDate: new Date()
           }
         ]
       })),
@@ -39,7 +39,21 @@ const useTaskStore = create<TaskStore>((set) => {
             status: !currentStatus
           }
 
-          console.log(cloneTaskList)
+          return { taskList: cloneTaskList }
+        }
+
+        return state
+      }),
+    changeTaskDescriptionById: (taskId, description) =>
+      set((state) => {
+        const taskIndex = state.taskList.findIndex((task) => task.id === taskId)
+
+        if (taskIndex !== -1) {
+          const cloneTaskList = [...state.taskList]
+          cloneTaskList[taskIndex] = {
+            ...cloneTaskList[taskIndex],
+            description: description
+          }
 
           return { taskList: cloneTaskList }
         }
