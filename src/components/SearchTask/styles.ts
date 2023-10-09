@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   width: 100%;
   height: 42px;
-  padding: 0 1rem;
+  padding-right: 1rem;
   border-radius: 5px;
   background-color: #fff;
   display: flex;
@@ -11,11 +11,9 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `
 
-export const Input = styled.input`
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
+export const ButtonSearch = styled.button`
   border: none;
-  font-size: 1.6rem;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 `
