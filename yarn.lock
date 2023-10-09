@@ -3238,9 +3238,9 @@
   integrity sha512-lPG6KlZs88gef6aD85z3HNkztpj7w2R7HmR3gygjfXCQmsLloWNARFkMuzKiiY8FGdh1XDpgBdrSf4aKDiA7Kg==
 
 "@types/inquirer@^8.2.1":
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/@types/inquirer/-/inquirer-8.2.6.tgz#abd41a5fb689c7f1acb12933d787d4262a02a0ab"
-  integrity sha512-3uT88kxg8lNzY8ay2ZjP44DKcRaTGztqeIvN2zHvhzIBH/uAPaL75aBtdNRKbA7xXoMbBt5kX0M00VKAnfOYlA==
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@types/inquirer/-/inquirer-8.2.7.tgz#4033011581e0c62a29bc686a6bdad7fcc47a8ebc"
+  integrity sha512-uICJEaJOf6MsKyyAf8p58+QxTS6dwy91QVfXk1hnQ0rUT+u7KpkeFx5dxQ/oju0BaOKB284brEMBHLpNf4bZDQ==
   dependencies:
     "@types/through" "*"
     rxjs "^7.2.0"
@@ -3476,9 +3476,9 @@
     "@types/yargs-parser" "*"
 
 "@types/yargs@^17.0.8":
-  version "17.0.27"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.27.tgz#a0508217c6a920ff54f272042ed91753480342d7"
-  integrity sha512-J+a6bwjDa0ezk5jBUR/iAHH2xm0gIf4YzsS4QINYTQ42bTiz/Szt5ZSLNLyHospoUAQ6EanoD4NztoJBLACHoQ==
+  version "17.0.28"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.28.tgz#d106e4301fbacde3d1796ab27374dd16588ec851"
+  integrity sha512-N3e3fkS86hNhtk6BEnc0rj3zcehaxx8QWhCROJkqpl5Zaoi7nAic3jH8q94jVD3zu5LGk+PUB6KAiDmimYOEQw==
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -5928,9 +5928,9 @@ eslint-plugin-react@^7.31.7, eslint-plugin-react@^7.33.2:
     string.prototype.matchall "^4.0.8"
 
 eslint-plugin-storybook@^0.6.13:
-  version "0.6.14"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.14.tgz#dfc2b58700e45eb4a13c172dda2973c2e033cd71"
-  integrity sha512-IeYigPur/MvESNDo43Z+Z5UvlcEVnt0dDZmnw1odi9X2Th1R3bpGyOZsHXb9bp1pFecOpRUuoMG5xdID2TwwOg==
+  version "0.6.15"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.15.tgz#8a091605b0a90974ec8e62d8112db6c4bd3a6faa"
+  integrity sha512-lAGqVAJGob47Griu29KXYowI4G7KwMoJDOkEip8ujikuDLxU+oWJ1l0WL6F2oDO4QiyUFXvtDkEkISMOPzo+7w==
   dependencies:
     "@storybook/csf" "^0.0.1"
     "@typescript-eslint/utils" "^5.45.0"
@@ -8098,9 +8098,9 @@ jsonfile@^6.0.1:
     object.values "^1.1.6"
 
 keyv@^4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.3.tgz#00873d2b046df737963157bd04f294ca818c9c25"
-  integrity sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug==
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
+  integrity sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==
   dependencies:
     json-buffer "3.0.1"
 
