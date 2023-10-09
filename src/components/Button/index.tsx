@@ -3,10 +3,13 @@ import * as S from './styles'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
+  color: 'white' | 'black' | 'darkBlue' | 'lightBlue' | 'blueCyan' | 'red'
 }
 
-const Button = (props: ButtonProps) => (
-  <S.Button {...props}>{props.children ?? 'Label do botão'}</S.Button>
+const Button = ({ children, color, ...props }: ButtonProps) => (
+  <S.Button {...props} color={color}>
+    {children ?? 'Label do botão'}
+  </S.Button>
 )
 
 export default Button

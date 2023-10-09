@@ -7,7 +7,8 @@ import useTaskStore from '@/store/zustand'
 import EditTask from '../EditTask'
 
 const TaskList = () => {
-  const { taskList, changeTaskStatusById, searchValue } = useTaskStore()
+  const { taskList, changeTaskStatusById, searchValue, removeTaskById } =
+    useTaskStore()
   const [editTaskId, setEditTaskId] = useState(0)
 
   const data = searchValue
@@ -39,12 +40,23 @@ const TaskList = () => {
 
               <p>{formattedDate}</p>
               <S.ButtonsWrapper>
-                <Button onClick={() => changeTaskStatusById(task.id)}>
+                <Button
+                  color="black"
+                  onClick={() => changeTaskStatusById(task.id)}
+                >
                   {task.status ? 'Desmarcar' : 'Concluir'}
                 </Button>
                 {editTaskId !== task.id && (
-                  <Button onClick={() => setEditTaskId(task.id)}>Editar</Button>
+                  <Button
+                    color="darkBlue"
+                    onClick={() => setEditTaskId(task.id)}
+                  >
+                    Editar
+                  </Button>
                 )}
+                <Button color="red" onClick={() => removeTaskById(task.id)}>
+                  Excluir
+                </Button>
               </S.ButtonsWrapper>
             </S.Item>
           )

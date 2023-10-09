@@ -1,8 +1,12 @@
 import theme from '@/styles/theme'
 import styled from 'styled-components'
 
-export const Button = styled.button`
-  background-color: ${theme.colors.darkBlue};
+type ButtonProps = {
+  color: 'white' | 'black' | 'darkBlue' | 'lightBlue' | 'blueCyan' | 'red'
+}
+
+export const Button = styled.button<ButtonProps>`
+  background-color: ${({ color }) => theme.colors[color]};
   color: ${theme.colors.white};
   border: none;
   border-radius: 0.5rem;

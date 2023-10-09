@@ -4,7 +4,8 @@ const theme = {
     black: '#383838',
     darkBlue: '#0c2e73',
     lightBlue: '#e6f1f7',
-    blueCyan: '#00ecf1'
+    blueCyan: '#00ecf1',
+    red: '#af2424'
   }
 }
 
