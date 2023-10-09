@@ -2,40 +2,56 @@
 
 import * as S from './styles'
 import { z } from 'zod'
-// import useTaskStore from '@/store/zustand'
+import useTaskStore from '@/store/zustand'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+import Input from '../Input'
+import Button from '../Button'
+import ErrorMessage from '../ErrorMessage'
 
-const taskDescriptionSchema = z.object({
-  taskDescription: z.string().min(1, 'Este campo é obrigatório.')
+const schema = z.object({
+  taskDescription: z.string().min(1, 'Informe uma descrição para a tarefa.')
 })
 
-type ValidationSchema = z.infer<typeof taskDescriptionSchema>
+type ValidationSchemaType = z.infer<typeof schema>
 
 const AddTask = () => {
-  // const addTask = useTaskStore((state) => state.addTask)
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<ValidationSchema>({
-    resolver: zodResolver(taskDescriptionSchema)
+  const addTask = useTaskStore((state) => state.addTask)
+  const methods = useForm<ValidationSchemaType>({
+    resolver: zodResolver(schema)
   })
 
-  const handleAddTask: SubmitHandler<ValidationSchema> = (data) => {
-    // addTask(data.taskDescription)
-    console.log(data)
+  const {
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = methods
+
+  const handleAddTask: SubmitHandler<ValidationSchemaType> = (data) => {
+    const { taskDescription } = data
+
+    addTask(taskDescription)
+
+    reset()
   }
 
   return (
-    <S.Form onSubmit={handleSubmit(handleAddTask)}>
-      <label htmlFor="">Adicionar tarefa: </label>
-      <input type="text" {...register('taskDescription')} />
+    <FormProvider {...methods}>
+      <S.Form onSubmit={handleSubmit(handleAddTask)}>
+        <label htmlFor="taskDescription">Adicionar tarefa:</label>
 
-      {errors.taskDescription && <p>{errors.taskDescription?.message}</p>}
-
-      <button type="submit">Adicionar task</button>
-    </S.Form>
+        <S.InputWrapper>
+          <Input
+            type="text"
+            id="taskDescription"
+            name="taskDescription"
+            data-testid="taskDescription"
+          />
+          <Button type="submit">Adicionar</Button>
+        </S.InputWrapper>
+      </S.Form>
+      <ErrorMessage errors={errors} field="taskDescription" />
+    </FormProvider>
   )
 }
 
