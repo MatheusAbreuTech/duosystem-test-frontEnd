@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
-  max-width: 50rem;
+  max-width: 80rem;
   width: 100%;
   display: flex;
   flex-direction: column;
