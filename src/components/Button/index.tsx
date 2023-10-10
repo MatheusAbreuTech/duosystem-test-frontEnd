@@ -3,7 +3,14 @@ import * as S from './styles'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
-  color: 'white' | 'black' | 'darkBlue' | 'lightBlue' | 'blueCyan' | 'red'
+  color:
+    | 'white'
+    | 'black'
+    | 'darkBlue'
+    | 'lightBlue'
+    | 'blueCyan'
+    | 'red'
+    | 'transparent'
 }
 
 const Button = ({ children, color, ...props }: ButtonProps) => (

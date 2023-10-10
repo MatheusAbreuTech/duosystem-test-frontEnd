@@ -1,3 +1,4 @@
+import theme from '@/styles/theme'
 import styled from 'styled-components'
 
 export const Form = styled.form`
@@ -7,6 +8,10 @@ export const Form = styled.form`
   width: 100%;
   align-items: flex-start;
   gap: 0.5rem;
+
+  > label {
+    font-size: 1.6rem;
+  }
 `
 
 export const InputWrapper = styled.div`
@@ -14,4 +19,8 @@ export const InputWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   width: 100%;
+
+  > input {
+    border: 1px solid ${theme.colors.black};
+  }
 `
