@@ -15,7 +15,7 @@ const schema = z.object({
 
 type ValidationSchemaType = z.infer<typeof schema>
 
-const SearchTask = () => {
+const TaskSearch = () => {
   const { searchTasksByDescription } = useTaskStore()
 
   const methods = useForm<ValidationSchemaType>({
@@ -47,4 +47,4 @@ const SearchTask = () => {
   )
 }
 
-export default SearchTask
+export default TaskSearch
