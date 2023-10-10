@@ -1,10 +1,5 @@
-import { FieldErrors } from 'react-hook-form'
 import * as S from './styles'
-
-interface ErrorMessageProps {
-  errors: FieldErrors
-  field: string
-}
+import { ErrorMessageProps } from './types'
 
 const ErrorMessage = ({ errors, field }: ErrorMessageProps) => {
   if (!errors[field]) {

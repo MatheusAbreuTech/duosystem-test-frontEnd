@@ -1,6 +1,6 @@
-import { TaskStore } from '@/types/TaskStore'
 import { create } from 'zustand'
 import { v4 as uuidv4 } from 'uuid'
+import { TaskStore } from './types'
 
 const useTaskStore = create<TaskStore>((set) => {
   return {

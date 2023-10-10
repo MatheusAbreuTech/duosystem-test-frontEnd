@@ -1,60 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import Button from '../Button'
 import * as S from './styles'
-import useTaskStore from '@/store/zustand'
 import EditTask from '../EditTask'
-import { Task } from '@/types/Task'
-
-type filters = 'all' | 'status' | 'createdDate'
+import { useTaskList } from './useTaskList'
 
 const TaskList = () => {
   const {
-    taskList,
+    data,
+    editTaskId,
+    handleFilterClick,
+    setEditTaskId,
     changeTaskStatusById,
-    searchValue,
-    removeTaskById,
-    searchTasksByDescription
-  } = useTaskStore()
-  const [editTaskId, setEditTaskId] = useState('')
-  const [data, setData] = useState<Task[]>(taskList)
-  const [filterBy, setFilterBy] = useState<filters>('all')
-  const [filterDirection, setFilterDirection] = useState<'asc' | 'desc'>('asc')
-
-  useEffect(() => {
-    let copyData = [...taskList]
-
-    if (filterBy === 'status') {
-      copyData = copyData.filter((task) => task.status)
-    } else if (filterBy === 'createdDate') {
-      copyData = copyData.sort(
-        (a, b) =>
-          (filterDirection === 'asc' ? 1 : -1) *
-          (b.createDate.getTime() - a.createDate.getTime())
-      )
-    }
-
-    copyData = copyData.filter((task) =>
-      task.description.toLowerCase().includes(searchValue.toLowerCase())
-    )
-
-    setData(copyData)
-  }, [searchValue, filterBy, taskList, filterDirection])
-
-  const handleFilterClick = (filter: filters) => {
-    if (filter === filterBy) {
-      setFilterDirection(filterDirection === 'asc' ? 'desc' : 'asc')
-    } else {
-      setFilterBy(filter)
-      setFilterDirection('asc')
-    }
-
-    if (filter === 'all') {
-      searchTasksByDescription('')
-      setData(taskList)
-    }
-  }
+    removeTaskById
+  } = useTaskList()
 
   return (
     <S.Wrapper>

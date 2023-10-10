@@ -1,48 +1,19 @@
 'use client'
 
 import * as S from './styles'
-import useTaskStore from '@/store/zustand'
 import Input from '../Input'
 import Button from '../Button'
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
+import { FormProvider } from 'react-hook-form'
+
 import ErrorMessage from '../ErrorMessage'
-
-type EditTaskProps = {
-  taskId: string
-  setEditTaskId: (resetId: string) => void
-}
-
-const schema = z.object({
-  editTaskField: z.string().min(1, 'Informe uma descrição para a tarefa.')
-})
-
-type ValidationSchemaType = z.infer<typeof schema>
+import { useEditTask } from './useEditTask'
+import { EditTaskProps } from './types'
 
 const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
-  const { taskList, changeTaskDescriptionById } = useTaskStore()
-
-  const methods = useForm<ValidationSchemaType>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      editTaskField: taskList.find((task) => task.id === taskId)?.description
-    }
+  const { methods, errors, handleSubmit, handleEditTask } = useEditTask({
+    taskId,
+    setEditTaskId
   })
-
-  const {
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = methods
-
-  const handleEditTask: SubmitHandler<ValidationSchemaType> = (data) => {
-    const { editTaskField } = data
-
-    changeTaskDescriptionById(taskId, editTaskField)
-    setEditTaskId('')
-    reset()
-  }
 
   return (
     <FormProvider {...methods}>

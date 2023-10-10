@@ -2,36 +2,13 @@
 
 import * as S from './styles'
 import Image from 'next/image'
-import useTaskStore from '@/store/zustand'
 import Input from '../Input'
-import { z } from 'zod'
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { FormProvider } from 'react-hook-form'
 import ErrorMessage from '../ErrorMessage'
-
-const schema = z.object({
-  searchValue: z.string().min(1, 'Insira um valor para pesquisar.')
-})
-
-type ValidationSchemaType = z.infer<typeof schema>
+import { useTaskSearch } from './useTaskSearch'
 
 const TaskSearch = () => {
-  const { searchTasksByDescription } = useTaskStore()
-
-  const methods = useForm<ValidationSchemaType>({
-    resolver: zodResolver(schema)
-  })
-
-  const {
-    handleSubmit,
-    formState: { errors }
-  } = methods
-
-  const handleInputSearch: SubmitHandler<ValidationSchemaType> = (data) => {
-    const { searchValue } = data
-
-    searchTasksByDescription(searchValue)
-  }
+  const { methods, errors, handleSubmit, handleInputSearch } = useTaskSearch()
 
   return (
     <FormProvider {...methods}>

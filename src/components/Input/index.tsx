@@ -1,15 +1,11 @@
-import { InputHTMLAttributes } from 'react'
 import * as S from './styles'
 import { useFormContext } from 'react-hook-form'
+import { InputProps } from './types'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string
-}
-
-const Input = (props: InputProps) => {
+const Input = ({ name, ...props }: InputProps) => {
   const { register } = useFormContext()
 
-  return <S.Input id={props.name} {...props} {...register(props.name)} />
+  return <S.Input id={name} {...props} {...register(name)} />
 }
 
 export default Input

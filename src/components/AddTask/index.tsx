@@ -1,39 +1,15 @@
 'use client'
 
 import * as S from './styles'
-import { z } from 'zod'
-import useTaskStore from '@/store/zustand'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+
+import { FormProvider } from 'react-hook-form'
 import Input from '../Input'
 import Button from '../Button'
 import ErrorMessage from '../ErrorMessage'
-
-const schema = z.object({
-  taskDescription: z.string().min(1, 'Informe uma descrição para a tarefa.')
-})
-
-type ValidationSchemaType = z.infer<typeof schema>
+import { useAddTask } from './useAddTask'
 
 const AddTask = () => {
-  const addTask = useTaskStore((state) => state.addTask)
-  const methods = useForm<ValidationSchemaType>({
-    resolver: zodResolver(schema)
-  })
-
-  const {
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = methods
-
-  const handleAddTask: SubmitHandler<ValidationSchemaType> = (data) => {
-    const { taskDescription } = data
-
-    addTask(taskDescription)
-
-    reset()
-  }
+  const { methods, errors, handleSubmit, handleAddTask } = useAddTask()
 
   return (
     <FormProvider {...methods}>
