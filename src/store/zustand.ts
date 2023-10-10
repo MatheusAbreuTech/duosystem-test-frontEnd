@@ -1,5 +1,6 @@
 import { TaskStore } from '@/types/TaskStore'
 import { create } from 'zustand'
+import { v4 as uuidv4 } from 'uuid'
 
 const useTaskStore = create<TaskStore>((set) => {
   return {
@@ -10,18 +11,20 @@ const useTaskStore = create<TaskStore>((set) => {
         searchValue: description
       }))
     },
-    addTask: (description) =>
-      set((state) => ({
+    addTask: (description) => {
+      const uuid = uuidv4()
+      return set((state) => ({
         taskList: [
           ...state.taskList,
           {
-            id: state.taskList.length + 1,
+            id: uuid,
             description: description,
             status: false,
             createDate: new Date()
           }
         ]
-      })),
+      }))
+    },
     removeTaskById: (taskId) =>
       set((state) => ({
         taskList: state.taskList.filter((task) => task.id !== taskId)

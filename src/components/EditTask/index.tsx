@@ -10,8 +10,8 @@ import { z } from 'zod'
 import ErrorMessage from '../ErrorMessage'
 
 type EditTaskProps = {
-  taskId: number
-  setEditTaskId: (resetId: number) => void
+  taskId: string
+  setEditTaskId: (resetId: string) => void
 }
 
 const schema = z.object({
@@ -40,7 +40,7 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
     const { editTaskField } = data
 
     changeTaskDescriptionById(taskId, editTaskField)
-    setEditTaskId(0)
+    setEditTaskId('')
     reset()
   }
 
@@ -49,7 +49,7 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
       <S.Form onSubmit={handleSubmit(handleEditTask)}>
         <S.Wrapper>
           <Input name="editTaskField" />
-          <Button>Salvar</Button>
+          <Button color="blueCyan">Salvar</Button>
         </S.Wrapper>
         <ErrorMessage errors={errors} field="editTaskField" />
       </S.Form>

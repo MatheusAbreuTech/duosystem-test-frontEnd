@@ -1,7 +1,7 @@
-import SearchTask from '../SearchTask'
-import TaskList from '../TaskList'
 import * as S from './styles'
+import TaskList from '../TaskList'
 import AddTask from '../AddTask'
+import TaskSearch from '../TaskSearch'
 
 const Main = () => {
   return (
@@ -9,7 +9,7 @@ const Main = () => {
       <S.Title>Lista de tarefas</S.Title>
 
       {/* input de pesquisa */}
-      <SearchTask />
+      <TaskSearch />
 
       {/* listagem */}
       <TaskList />

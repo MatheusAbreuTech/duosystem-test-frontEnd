@@ -18,7 +18,7 @@ describe('zustand', () => {
     expect(result.current.taskList[0].description).toBe('Nova tarefa')
 
     act(() => {
-      result.current.removeTaskById(1)
+      result.current.removeTaskById(result.current.taskList[0].id)
     })
     expect(result.current.taskList.length).toBe(0)
   })
@@ -33,7 +33,7 @@ describe('zustand', () => {
 
     act(() => {
       result.current.addTask('Nova tarefa')
-      result.current.changeTaskStatusById(1)
+      result.current.changeTaskStatusById(result.current.taskList[0].id)
     })
     expect(result.current.taskList[0].status).toBe(true)
   })
@@ -41,7 +41,10 @@ describe('zustand', () => {
   it('should change task description by id', () => {
     const { result } = renderHook(() => useTaskStore())
     act(() => {
-      result.current.changeTaskDescriptionById(1, 'Tarefa atualizada')
+      result.current.changeTaskDescriptionById(
+        result.current.taskList[0].id,
+        'Tarefa atualizada'
+      )
     })
     expect(result.current.taskList[0].description).toBe('Tarefa atualizada')
   })

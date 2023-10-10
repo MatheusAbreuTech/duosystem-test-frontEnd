@@ -1,6 +1,6 @@
 export type Task = {
   description: string
-  id: number
+  id: string
   status: boolean
   createDate: Date
 }
