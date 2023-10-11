@@ -19,15 +19,24 @@ const TaskList = () => {
     <S.Wrapper>
       <S.FiltersWrapper>
         <span>Filtrar por: </span>
-        <Button color="transparent" onClick={() => handleFilterClick('all')}>
+        <Button
+          color="transparent"
+          onClick={() => handleFilterClick('all')}
+          data-testId="BtnFilterByAll"
+        >
           Todas
         </Button>
-        <Button color="transparent" onClick={() => handleFilterClick('status')}>
+        <Button
+          color="transparent"
+          onClick={() => handleFilterClick('status')}
+          data-testId="BtnFilterByStatus"
+        >
           Concluidas
         </Button>
         <Button
           color="transparent"
           onClick={() => handleFilterClick('createdDate')}
+          data-testId="BtnFilterCreatedDate"
         >
           Data de criação
         </Button>
@@ -52,7 +61,7 @@ const TaskList = () => {
                 <S.InfosWrapper>
                   <p>{formattedDate}</p>
                   <Button
-                    color="black"
+                    color="green"
                     onClick={() => changeTaskStatusById(task.id)}
                   >
                     {task.status ? 'Desmarcar' : 'Concluir'}

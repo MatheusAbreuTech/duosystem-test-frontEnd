@@ -19,8 +19,10 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
     <FormProvider {...methods}>
       <S.Form onSubmit={handleSubmit(handleEditTask)}>
         <S.Wrapper>
-          <Input name="editTaskField" />
-          <Button color="blueCyan">Salvar</Button>
+          <Input name="editTaskField" data-testId="editTaskField" />
+          <Button type="submit" color="green" data-testId="editTaskButton">
+            Salvar
+          </Button>
         </S.Wrapper>
         <ErrorMessage errors={errors} field="editTaskField" />
       </S.Form>

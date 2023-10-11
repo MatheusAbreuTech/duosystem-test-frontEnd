@@ -3,7 +3,15 @@ import ErrorMessage from '.'
 
 export default {
   title: 'ErrorMessage',
-  component: ErrorMessage
+  component: ErrorMessage,
+  args: {
+    field: 'testField',
+    errors: {
+      testField: {
+        message: 'mensagem de erro'
+      }
+    }
+  }
 } as Meta
 
 export const Default: StoryObj = {}

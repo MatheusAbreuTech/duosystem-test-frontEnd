@@ -29,14 +29,13 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
 }
 
 .c3 {
-  background-color: #00ecf1;
+  background-color: #3AC922;
   color: #ffffff;
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
   max-height: 4.2rem;
   height: 100%;
-  width: 100%;
   cursor: pointer;
   font-size: 1.6rem;
 }
@@ -49,12 +48,15 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
   >
     <input
       class="c2"
+      data-testid="editTaskField"
       id="editTaskField"
       name="editTaskField"
     />
     <button
       class="c3"
-      color="blueCyan"
+      color="green"
+      data-testid="editTaskButton"
+      type="submit"
     >
       Salvar
     </button>

@@ -9,6 +9,7 @@ type ButtonProps = {
     | 'lightBlue'
     | 'blueCyan'
     | 'red'
+    | 'green'
     | 'transparent'
 }
 
@@ -24,7 +25,6 @@ export const Button = styled.button<ButtonProps>`
   padding: 1rem;
   max-height: 4.2rem;
   height: 100%;
-  width: 100%;
   cursor: pointer;
   font-size: 1.6rem;
 `

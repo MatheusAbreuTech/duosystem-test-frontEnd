@@ -9,5 +9,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'lightBlue'
     | 'blueCyan'
     | 'red'
+    | 'green'
     | 'transparent'
 }

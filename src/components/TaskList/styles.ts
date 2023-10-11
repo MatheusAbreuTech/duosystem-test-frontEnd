@@ -29,6 +29,7 @@ export const Item = styled.li`
 
   @media (max-width: 700px) {
     flex-direction: column;
+    margin: 2rem 0;
   }
 `
 
@@ -42,6 +43,10 @@ export const Description = styled.p<DescriptionProps>`
   text-overflow: ellipsis;
   width: 300px;
   text-align: start;
+
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `
 
 export const InfosWrapper = styled.div`
@@ -51,18 +56,27 @@ export const InfosWrapper = styled.div`
   align-items: center;
   gap: 1rem;
 
+  > button {
+    width: 100%;
+  }
+
   @media (max-width: 700px) {
     flex-direction: column;
   }
 `
 
 export const FiltersWrapper = styled.div`
-  max-width: 60%;
+  max-width: 70%;
+  height: auto;
   display: flex;
   align-items: center;
   gap: 1rem;
 
   > span {
     font-size: 1.6rem;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 100%;
   }
 `

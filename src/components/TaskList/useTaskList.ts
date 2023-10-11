@@ -49,9 +49,12 @@ export const useTaskList = () => {
       setData(taskList)
     }
   }
+
   return {
     data,
     editTaskId,
+    filterBy,
+    filterDirection,
     handleFilterClick,
     setEditTaskId,
     changeTaskStatusById,
