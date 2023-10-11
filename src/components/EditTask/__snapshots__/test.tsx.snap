@@ -48,7 +48,7 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
   >
     <input
       class="c2"
-      data-testid="editTaskField"
+      data-testid="editTaskField_id"
       id="editTaskField"
       name="editTaskField"
     />

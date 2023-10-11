@@ -4,16 +4,11 @@ import Button from '../Button'
 import * as S from './styles'
 import EditTask from '../EditTask'
 import { useTaskList } from './useTaskList'
+import useTaskStore from '@/store/zustand'
 
 const TaskList = () => {
-  const {
-    data,
-    editTaskId,
-    handleFilterClick,
-    setEditTaskId,
-    changeTaskStatusById,
-    removeTaskById
-  } = useTaskList()
+  const { data, editTaskId, setEditTaskId, handleFilterClick } = useTaskList()
+  const { changeTaskStatusById, removeTaskById } = useTaskStore()
 
   return (
     <S.Wrapper>
@@ -42,9 +37,9 @@ const TaskList = () => {
         </Button>
       </S.FiltersWrapper>
 
-      <S.List>
-        {data.length > 0 ? (
-          data.map((task) => {
+      {data.length > 0 ? (
+        <S.List data-testId="list-data">
+          {data.map((task) => {
             const formattedDate = new Date(task.createDate).toLocaleString(
               'pt-BR'
             )
@@ -70,6 +65,7 @@ const TaskList = () => {
                     <Button
                       color="darkBlue"
                       onClick={() => setEditTaskId(task.id)}
+                      data-testId={`editButton_${task.id}`}
                     >
                       Editar
                     </Button>
@@ -80,11 +76,11 @@ const TaskList = () => {
                 </S.InfosWrapper>
               </S.Item>
             )
-          })
-        ) : (
-          <p>Nenhuma tarefa encontrada</p>
-        )}
-      </S.List>
+          })}
+        </S.List>
+      ) : (
+        <p>Nenhuma tarefa encontrada</p>
+      )}
     </S.Wrapper>
   )
 }
