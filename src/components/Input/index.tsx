@@ -6,7 +6,12 @@ const Input = ({ name, type, id, dataTestid }: InputProps) => {
   const { register } = useFormContext()
 
   return (
-    <S.Input type={type} id={id} data-testid={dataTestid} {...register(name)} />
+    <S.Input
+      type={type && type}
+      id={id && id}
+      data-testid={dataTestid && dataTestid}
+      {...register(name)}
+    />
   )
 }
 
