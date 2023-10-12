@@ -12,7 +12,7 @@ describe('<Button />', () => {
 
   test('should renders with provided children', () => {
     const buttonText = 'Click Me'
-    const { getByText } = render(<Button color="white">{buttonText}</Button>)
+    const { getByText } = render(<Button color="white" label={buttonText} />)
     const renderedText = getByText(buttonText)
     expect(renderedText).toBeInTheDocument()
   })

@@ -7,7 +7,10 @@ import { schema } from '../AddTask/schema'
 
 export default {
   title: 'Input',
-  component: Input
+  component: Input,
+  argTypes: {
+    onChange: { action: 'onChange' }
+  }
 } as Meta
 
 const Template: StoryFn = () => {

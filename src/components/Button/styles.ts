@@ -6,7 +6,9 @@ export const Button = styled.button<ButtonStylesProps>`
   background-color: ${({ color }) =>
     color === 'transparent' ? 'transparent' : theme.colors[color]};
   color: ${({ color }) =>
-    color === 'transparent' ? theme.colors.darkBlue : theme.colors.white};
+    color === 'transparent' || color === 'white'
+      ? theme.colors.darkBlue
+      : theme.colors.white};
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;

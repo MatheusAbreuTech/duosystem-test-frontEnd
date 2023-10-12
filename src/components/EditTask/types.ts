@@ -3,7 +3,7 @@ import { schema } from './schema'
 
 export type EditTaskProps = {
   taskId: string
-  setEditTaskId: (resetId: string) => void
+  setEditTaskId: (taskId: string) => void
 }
 
 export type SchemaType = z.infer<typeof schema>

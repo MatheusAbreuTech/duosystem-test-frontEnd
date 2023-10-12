@@ -18,23 +18,20 @@ const TaskList = () => {
           color="transparent"
           onClick={() => handleFilterClick('all')}
           data-testId="BtnFilterByAll"
-        >
-          Todas
-        </Button>
+          label="Todas"
+        />
         <Button
           color="transparent"
           onClick={() => handleFilterClick('status')}
           data-testId="BtnFilterByStatus"
-        >
-          Concluidas
-        </Button>
+          label="Concluidas"
+        />
         <Button
           color="transparent"
           onClick={() => handleFilterClick('createdDate')}
           data-testId="BtnFilterCreatedDate"
-        >
-          Data de criação
-        </Button>
+          label="Data de criação"
+        />
       </S.FiltersWrapper>
 
       {data.length > 0 ? (
@@ -59,25 +56,22 @@ const TaskList = () => {
                     color="green"
                     onClick={() => changeTaskStatusById(task.id)}
                     data-testId={`changeStatusButton_${task.id}`}
-                  >
-                    {task.status ? 'Desmarcar' : 'Concluir'}
-                  </Button>
+                    label={`${task.status ? 'Desmarcar' : 'Concluir'}`}
+                  />
                   {editTaskId !== task.id && (
                     <Button
                       color="darkBlue"
                       onClick={() => setEditTaskId(task.id)}
                       data-testId={`editButton_${task.id}`}
-                    >
-                      Editar
-                    </Button>
+                      label="Editar"
+                    />
                   )}
                   <Button
                     color="red"
                     onClick={() => removeTaskById(task.id)}
                     data-testId={`removeTaskButton_${task.id}`}
-                  >
-                    Excluir
-                  </Button>
+                    label="Excluir"
+                  />
                 </S.InfosWrapper>
               </S.Item>
             )

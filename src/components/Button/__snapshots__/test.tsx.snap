@@ -3,7 +3,7 @@
 exports[`<Button /> should renders with default values 1`] = `
 .c0 {
   background-color: #ffffff;
-  color: #ffffff;
+  color: #0c2e73;
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
