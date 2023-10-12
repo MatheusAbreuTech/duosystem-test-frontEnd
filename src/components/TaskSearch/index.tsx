@@ -11,8 +11,12 @@ const TaskSearch = () => {
 
   return (
     <FormProvider {...methods}>
-      <S.Wrapper onSubmit={handleSubmit(handleInputSearch)}>
-        <Input placeholder="Pesquise uma tarefa..." name="searchValue" />
+      <S.Wrapper action="" onSubmit={handleSubmit(handleInputSearch)}>
+        <Input
+          placeholder="Pesquise uma tarefa..."
+          dataTestid="searchValue"
+          name="searchValue"
+        />
 
         <S.ButtonSearch type="submit">
           <img src="/img/search.svg" alt="" width="20" height="20" />

@@ -32,13 +32,13 @@ exports[`<SearchTask /> should render the SearchTask component in screen 1`] = `
 }
 
 <form
+  action=""
   class="c0"
 >
   <input
     class="c1"
-    id="searchValue"
+    data-testid="searchValue"
     name="searchValue"
-    placeholder="Pesquise uma tarefa..."
   />
   <button
     class="c2"

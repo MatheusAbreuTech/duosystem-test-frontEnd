@@ -49,6 +49,7 @@ exports[`<AddTask /> should render the AddTask component 1`] = `
 }
 
 <form
+  action=""
   class="c0"
 >
   <label

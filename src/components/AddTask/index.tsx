@@ -13,7 +13,7 @@ const AddTask = () => {
 
   return (
     <FormProvider {...methods}>
-      <S.Form onSubmit={handleSubmit(handleAddTask)}>
+      <S.Form action="" onSubmit={handleSubmit(handleAddTask)}>
         <label htmlFor="taskDescription">Adicionar tarefa:</label>
 
         <S.InputWrapper>
@@ -21,7 +21,7 @@ const AddTask = () => {
             type="text"
             id="taskDescription"
             name="taskDescription"
-            data-testid="taskDescription"
+            dataTestid="taskDescription"
           />
           <Button color="darkBlue" type="submit">
             Adicionar

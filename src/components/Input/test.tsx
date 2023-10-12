@@ -22,14 +22,14 @@ describe('<Input />', () => {
 
       return (
         <FormProvider {...methods}>
-          <Input name="test" />
+          <Input name="test" dataTestid="inputTest" />
         </FormProvider>
       )
     }
 
-    const { container } = render(<TestComponent />)
+    const { container, getByTestId } = render(<TestComponent />)
 
-    const inputElement = container.querySelector('#test') as HTMLInputElement
+    const inputElement = getByTestId('inputTest') as HTMLInputElement
 
     expect(inputElement).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
@@ -43,14 +43,14 @@ describe('<Input />', () => {
 
       return (
         <FormProvider {...methods}>
-          <Input name="test" />
+          <Input name="test" dataTestid="inputTest" />
         </FormProvider>
       )
     }
 
-    const { container } = render(<TestComponent />)
+    const { getByTestId } = render(<TestComponent />)
 
-    const inputElement = container.querySelector('#test') as HTMLInputElement
+    const inputElement = getByTestId('inputTest') as HTMLInputElement
 
     fireEvent.change(inputElement, { target: { value: 'Novo Valor' } })
 

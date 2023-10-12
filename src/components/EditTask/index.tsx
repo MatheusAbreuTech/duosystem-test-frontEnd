@@ -18,11 +18,12 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
   return (
     <FormProvider {...methods}>
       <S.Form
+        action=""
         onSubmit={handleSubmit(handleEditTask)}
         data-testId={`editTaskComponent_${taskId}`}
       >
         <S.Wrapper>
-          <Input name="editTaskField" data-testId={`editTaskField_${taskId}`} />
+          <Input name="editTaskField" dataTestid={`editTaskField_${taskId}`} />
           <Button
             type="submit"
             color="green"

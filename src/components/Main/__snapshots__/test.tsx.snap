@@ -124,13 +124,13 @@ exports[`<Main /> should render the Main component in screen 1`] = `
     Lista de tarefas
   </h1>
   <form
+    action=""
     class="c2"
   >
     <input
       class="c3"
-      id="searchValue"
+      data-testid="searchValue"
       name="searchValue"
-      placeholder="Pesquise uma tarefa..."
     />
     <button
       class="c4"
@@ -180,6 +180,7 @@ exports[`<Main /> should render the Main component in screen 1`] = `
     </p>
   </div>
   <form
+    action=""
     class="c8"
   >
     <label

@@ -14,7 +14,7 @@ exports[`<Input /> should renders with default values 1`] = `
 
 <input
   class="c0"
-  id="test"
+  data-testid="inputTest"
   name="test"
 />
 `;

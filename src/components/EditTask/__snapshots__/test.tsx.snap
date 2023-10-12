@@ -41,6 +41,7 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
 }
 
 <form
+  action=""
   class="c0"
   data-testid="editTaskComponent_id"
 >
@@ -50,7 +51,6 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
     <input
       class="c2"
       data-testid="editTaskField_id"
-      id="editTaskField"
       name="editTaskField"
     />
     <button
