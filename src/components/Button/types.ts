@@ -1,3 +1,4 @@
+import theme from '@/styles/theme'
 import { ButtonHTMLAttributes } from 'react'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,6 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export interface ButtonStylesProps {
+  theme: typeof theme
   color:
     | 'white'
     | 'black'

@@ -1,12 +1,9 @@
-import { PropsWithChildren } from 'react'
+'use client'
 
-import GlobalStyles from '@/styles/global'
+import StyledComponentsRegistry from '@/lib/registry'
 
-export function Providers({ children }: PropsWithChildren) {
-  return (
-    <>
-      <GlobalStyles />
-      {children}
-    </>
-  )
+const Providers = (props: React.PropsWithChildren) => {
+  return <StyledComponentsRegistry>{props.children}</StyledComponentsRegistry>
 }
+
+export default Providers

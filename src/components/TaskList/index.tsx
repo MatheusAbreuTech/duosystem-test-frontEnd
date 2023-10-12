@@ -60,7 +60,7 @@ const TaskList = () => {
                     onClick={() => changeTaskStatusById(task.id)}
                     data-testId={`changeStatusButton_${task.id}`}
                   >
-                    ${task.status ? 'Desmarcar' : 'Concluir'}
+                    {task.status ? 'Desmarcar' : 'Concluir'}
                   </Button>
                   {editTaskId !== task.id && (
                     <Button
