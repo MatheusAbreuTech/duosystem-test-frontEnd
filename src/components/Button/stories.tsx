@@ -12,48 +12,40 @@ export const Default: StoryObj = {}
 const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />
 export const ButtonWithColorWhite = Template.bind({})
 ButtonWithColorWhite.args = {
-  color: 'white',
-  label: 'bg-white'
+  color: 'white'
 }
 
 export const ButtonWithColorBlack = Template.bind({})
 ButtonWithColorBlack.args = {
-  color: 'black',
-  label: 'bg-black'
+  color: 'black'
 }
 
 export const ButtonWithColorDarkBlue = Template.bind({})
 ButtonWithColorDarkBlue.args = {
-  color: 'darkBlue',
-  label: 'bg-darkBlue'
+  color: 'darkBlue'
 }
 
 export const ButtonWithColorLightBlue = Template.bind({})
 ButtonWithColorLightBlue.args = {
-  color: 'lightBlue',
-  label: 'bg-lightBlue'
+  color: 'lightBlue'
 }
 
 export const ButtonWithColorBlueCyan = Template.bind({})
 ButtonWithColorBlueCyan.args = {
-  color: 'blueCyan',
-  label: 'bg-blueCyan'
+  color: 'blueCyan'
 }
 
 export const ButtonWithColorRed = Template.bind({})
 ButtonWithColorRed.args = {
-  color: 'red',
-  label: 'bg-red'
+  color: 'red'
 }
 
 export const ButtonWithColorGreen = Template.bind({})
 ButtonWithColorGreen.args = {
-  color: 'green',
-  label: 'bg-green'
+  color: 'green'
 }
 
 export const ButtonWithColorTransparent = Template.bind({})
 ButtonWithColorTransparent.args = {
-  color: 'transparent',
-  label: 'bg-transparent'
+  color: 'transparent'
 }
