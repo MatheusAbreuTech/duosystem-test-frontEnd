@@ -15,11 +15,12 @@ const Template = () => {
     <>
       <Button
         color="darkBlue"
-        label="Adicionar tarefa"
         onClick={() =>
           addTask(`descrição da tarefa ${Math.floor(Math.random() * 100)}`)
         }
-      />
+      >
+        Adicionar tarefa
+      </Button>
       <TaskList />
     </>
   )
