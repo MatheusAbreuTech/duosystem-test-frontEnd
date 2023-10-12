@@ -1,7 +1,6 @@
 'use client'
 
 import * as S from './styles'
-import Image from 'next/image'
 import Input from '../Input'
 import { FormProvider } from 'react-hook-form'
 import ErrorMessage from '../ErrorMessage'
@@ -16,7 +15,7 @@ const TaskSearch = () => {
         <Input placeholder="Pesquise uma tarefa..." name="searchValue" />
 
         <S.ButtonSearch type="submit">
-          <Image src="/img/search.svg" alt="" width="20" height="20" />
+          <img src="/img/search.svg" alt="" width="20" height="20" />
         </S.ButtonSearch>
       </S.Wrapper>
       <ErrorMessage errors={errors} field="searchValue" />

@@ -23,7 +23,9 @@ const AddTask = () => {
             name="taskDescription"
             data-testid="taskDescription"
           />
-          <Button color="darkBlue" label="Adicionar" type="submit" />
+          <Button color="darkBlue" type="submit">
+            Adicionar
+          </Button>
         </S.InputWrapper>
       </S.Form>
       <ErrorMessage errors={errors} field="taskDescription" />

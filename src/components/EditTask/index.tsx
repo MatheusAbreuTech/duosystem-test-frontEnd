@@ -26,9 +26,10 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
           <Button
             type="submit"
             color="green"
-            label="Salvar"
             data-testId={`editTaskButton_${taskId}`}
-          />
+          >
+            Salvar
+          </Button>
         </S.Wrapper>
         <ErrorMessage
           errors={errors}

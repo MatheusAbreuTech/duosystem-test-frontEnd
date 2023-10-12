@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes } from 'react'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label?: string
+  children?: React.ReactNode
+  formAction?: string
   color:
     | 'white'
     | 'black'

@@ -46,12 +46,8 @@ exports[`<SearchTask /> should render the SearchTask component in screen 1`] = `
   >
     <img
       alt=""
-      data-nimg="1"
-      decoding="async"
       height="20"
-      loading="lazy"
       src="/img/search.svg"
-      style="color: transparent;"
       width="20"
     />
   </button>
