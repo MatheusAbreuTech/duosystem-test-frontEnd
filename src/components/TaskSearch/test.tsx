@@ -8,5 +8,6 @@ describe('<SearchTask />', () => {
     const { container } = render(<SearchTask />)
 
     expect(container).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

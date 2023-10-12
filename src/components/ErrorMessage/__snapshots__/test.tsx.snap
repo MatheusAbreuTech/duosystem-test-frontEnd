@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage /> should display an error message when there is an error in the field 1`] = `
+.c0 {
+  color: red;
+  font-size: 1.4rem;
+}
+
+<span
+  class="c0"
+>
+  teste
+</span>
+`;

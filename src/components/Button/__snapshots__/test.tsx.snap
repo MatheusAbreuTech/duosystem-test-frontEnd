@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should renders with default values 1`] = `
+.c0 {
+  background-color: #ffffff;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-height: 4.2rem;
+  height: 100%;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+<button
+  class="c0"
+  color="white"
+>
+  Label do botão
+</button>
+`;

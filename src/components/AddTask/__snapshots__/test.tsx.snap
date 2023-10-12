@@ -1,16 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<EditTask /> should render the EditTask component 1`] = `
+exports[`<AddTask /> should render the AddTask component 1`] = `
 .c0 {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+  width: 100%;
   align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.c0 >label {
+  font-size: 1.6rem;
 }
 
 .c1 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .c1 >input {
@@ -29,7 +37,7 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
 }
 
 .c3 {
-  background-color: #3AC922;
+  background-color: #0c2e73;
   color: #ffffff;
   border: none;
   border-radius: 0.5rem;
@@ -42,24 +50,28 @@ exports[`<EditTask /> should render the EditTask component 1`] = `
 
 <form
   class="c0"
-  data-testid="editTaskComponent_id"
 >
+  <label
+    for="taskDescription"
+  >
+    Adicionar tarefa:
+  </label>
   <div
     class="c1"
   >
     <input
       class="c2"
-      data-testid="editTaskField_id"
-      id="editTaskField"
-      name="editTaskField"
+      data-testid="taskDescription"
+      id="taskDescription"
+      name="taskDescription"
+      type="text"
     />
     <button
       class="c3"
-      color="green"
-      data-testid="editTaskButton_id"
+      color="darkBlue"
       type="submit"
     >
-      Salvar
+      Adicionar
     </button>
   </div>
 </form>

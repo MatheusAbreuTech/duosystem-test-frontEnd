@@ -58,6 +58,7 @@ const TaskList = () => {
                   <Button
                     color="green"
                     onClick={() => changeTaskStatusById(task.id)}
+                    data-testId={`changeStatusButton_${task.id}`}
                   >
                     {task.status ? 'Desmarcar' : 'Concluir'}
                   </Button>
@@ -70,7 +71,11 @@ const TaskList = () => {
                       Editar
                     </Button>
                   )}
-                  <Button color="red" onClick={() => removeTaskById(task.id)}>
+                  <Button
+                    color="red"
+                    onClick={() => removeTaskById(task.id)}
+                    data-testId={`removeTaskButton_${task.id}`}
+                  >
                     Excluir
                   </Button>
                 </S.InfosWrapper>

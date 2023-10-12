@@ -17,14 +17,25 @@ const EditTask = ({ taskId, setEditTaskId }: EditTaskProps) => {
 
   return (
     <FormProvider {...methods}>
-      <S.Form onSubmit={handleSubmit(handleEditTask)}>
+      <S.Form
+        onSubmit={handleSubmit(handleEditTask)}
+        data-testId={`editTaskComponent_${taskId}`}
+      >
         <S.Wrapper>
           <Input name="editTaskField" data-testId={`editTaskField_${taskId}`} />
-          <Button type="submit" color="green" data-testId="editTaskButton">
+          <Button
+            type="submit"
+            color="green"
+            data-testId={`editTaskButton_${taskId}`}
+          >
             Salvar
           </Button>
         </S.Wrapper>
-        <ErrorMessage errors={errors} field="editTaskField" />
+        <ErrorMessage
+          errors={errors}
+          field="editTaskField"
+          data-testId={`editTaskError_${taskId}`}
+        />
       </S.Form>
     </FormProvider>
   )

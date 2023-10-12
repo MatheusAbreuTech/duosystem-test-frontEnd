@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchTask /> should render the SearchTask component in screen 1`] = `
+.c0 {
+  width: 100%;
+  height: 44px;
+  padding-right: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #383838;
+}
+
+.c2 {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.c1 {
+  width: 100%;
+  height: 42px;
+  padding: 0 1rem;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 5px;
+}
+
+<form
+  class="c0"
+>
+  <input
+    class="c1"
+    id="searchValue"
+    name="searchValue"
+    placeholder="Pesquise uma tarefa..."
+  />
+  <button
+    class="c2"
+    type="submit"
+  >
+    <img
+      alt=""
+      data-nimg="1"
+      decoding="async"
+      height="20"
+      loading="lazy"
+      src="/img/search.svg"
+      style="color: transparent;"
+      width="20"
+    />
+  </button>
+</form>
+`;

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import TaskList from '../TaskList'
 import { useTaskList } from './useTaskList'
 import { act, renderHook } from '@testing-library/react-hooks'
@@ -9,13 +9,14 @@ const mockedUseTaskStore = useTaskStore as jest.MockedFunction<
   typeof useTaskStore
 >
 
-describe('TaskList', () => {
-  it('deve renderizar corretamente', () => {
+describe('<TaskList />', () => {
+  it('should correctly render the component', () => {
     mockedUseTaskStore.mockReturnValue({
       taskList: []
     })
     const { container } = render(<TaskList />)
     expect(container).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should only render a message when it has no task', () => {
@@ -45,33 +46,78 @@ describe('TaskList', () => {
     expect(getByText('Test')).toBeInTheDocument()
   })
 
-  // it('should display the EditTask component when the edit task button is clicked', () => {
-  //   mockedUseTaskStore.mockReturnValue({
-  //     taskList: [
-  //       {
-  //         id: 'testId',
-  //         description: 'Test',
-  //         createDate: new Date('2022-01-01'),
-  //         status: false
-  //       }
-  //     ],
-  //     searchValue: ''
-  //   })
+  it('should display the EditTask component when the edit button is clicked', () => {
+    mockedUseTaskStore.mockReturnValue({
+      taskList: [
+        {
+          id: 'testId',
+          description: 'Test',
+          createDate: new Date('2022-01-01'),
+          status: false
+        }
+      ],
+      searchValue: ''
+    })
 
-  //   const { getByTestId } = render(<TaskList />)
-  //   // const component = renderer.create(<TaskList />).toJSON()
+    const { queryByTestId, getByTestId } = render(<TaskList />)
 
-  //   // const button = getByTestId(`editButton_testId`)
-  //   // console.log(component)
+    const button = getByTestId(`editButton_testId`)
 
-  //   fireEvent.click(button)
+    fireEvent.click(button)
 
-  //   expect(getByTestId('editTaskComponent_testId')).toBeInTheDocument()
-  // })
+    expect(queryByTestId('editTaskComponent_testId')).toBeInTheDocument()
+    expect(button).not.toBeInTheDocument()
+  })
+
+  it('should call the changeTaskStatusById function when clicking the change status button', () => {
+    mockedUseTaskStore.mockReturnValue({
+      taskList: [
+        {
+          id: 'testId',
+          description: 'Test',
+          createDate: new Date('2022-01-01'),
+          status: false
+        }
+      ],
+      searchValue: '',
+      changeTaskStatusById: jest.fn()
+    })
+
+    const { getByTestId } = render(<TaskList />)
+
+    const changeStatusButton = getByTestId('changeStatusButton_testId')
+
+    fireEvent.click(changeStatusButton)
+
+    expect(useTaskStore().changeTaskStatusById).toHaveBeenCalledWith('testId')
+  })
+
+  it('should call the removeTaskById function when clicking the remove task button', () => {
+    mockedUseTaskStore.mockReturnValue({
+      taskList: [
+        {
+          id: 'testId',
+          description: 'Test',
+          createDate: new Date('2022-01-01'),
+          status: false
+        }
+      ],
+      searchValue: '',
+      removeTaskById: jest.fn()
+    })
+
+    const { getByTestId } = render(<TaskList />)
+
+    const removeButton = getByTestId('removeTaskButton_testId')
+
+    fireEvent.click(removeButton)
+
+    expect(useTaskStore().removeTaskById).toHaveBeenCalledWith('testId')
+  })
 })
 
 describe('useTaskList', () => {
-  it('deve ter o estado inicial correto', () => {
+  it('should start with the correct initial values', () => {
     mockedUseTaskStore.mockReturnValue({
       taskList: [],
       searchValue: ''
@@ -81,7 +127,7 @@ describe('useTaskList', () => {
     expect(result.current.editTaskId).toBe('')
   })
 
-  it('deve alterar o estado data corretamente quando mudar os filtros', async () => {
+  it('should return the list of tasks according to the filters passed when calling the handleFilterClick function', () => {
     mockedUseTaskStore.mockReturnValue({
       taskList: [
         {
@@ -133,5 +179,48 @@ describe('useTaskList', () => {
     )
 
     expect(result.current.data).toEqual(dataFiltered)
+  })
+
+  it('should filter the list of tasks if the searchValue value is already defined', () => {
+    mockedUseTaskStore.mockReturnValue({
+      taskList: [
+        {
+          id: 'testId',
+          description: 'Test',
+          createDate: new Date('2022-01-01'),
+          status: false
+        },
+        {
+          id: 'testId2',
+          description: 'Test2',
+          createDate: new Date('2022-01-02'),
+          status: false
+        },
+        {
+          id: 'testId3',
+          description: 'Test3',
+          createDate: new Date('2022-01-03'),
+          status: false
+        },
+        {
+          id: 'testId4',
+          description: 'Test4',
+          createDate: new Date('2022-01-04'),
+          status: false
+        }
+      ],
+      searchValue: 'Test4'
+    })
+
+    const { result } = renderHook(() => useTaskList())
+
+    expect(result.current.data).toEqual([
+      {
+        id: 'testId4',
+        description: 'Test4',
+        createDate: new Date('2022-01-04'),
+        status: false
+      }
+    ])
   })
 })

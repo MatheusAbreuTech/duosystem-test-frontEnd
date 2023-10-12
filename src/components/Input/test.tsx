@@ -32,6 +32,7 @@ describe('<Input />', () => {
     const inputElement = container.querySelector('#test') as HTMLInputElement
 
     expect(inputElement).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   test('should change value when type', () => {

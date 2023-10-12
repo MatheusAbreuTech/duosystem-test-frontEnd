@@ -1377,9 +1377,9 @@
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
 "@hookform/resolvers@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.3.1.tgz#b7cbfe767434f52cba6b99b0a9a0b73eb8895188"
-  integrity sha512-K7KCKRKjymxIB90nHDQ7b9nli474ru99ZbqxiqDAWYsYhOsU3/4qLxW91y+1n04ic13ajjZ66L3aXbNef8PELQ==
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.3.2.tgz#5c40f06fe8137390b071d961c66d27ee8f76f3bc"
+  integrity sha512-Tw+GGPnBp+5DOsSg4ek3LCPgkBOuOgS5DsDV7qsWNH9LZc433kgsWICjlsh2J9p04H2K66hsXPPb9qn9ILdUtA==
 
 "@humanwhocodes/config-array@^0.11.11":
   version "0.11.11"
@@ -5547,9 +5547,9 @@ ejs@^3.1.8:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.535:
-  version "1.4.550"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.550.tgz#8a56ff5a8597f486d2972a653b0852945fc7a9c3"
-  integrity sha512-LfcsAzGj18xBYFM5WetwNQdqA03iLDozfCo0SWpu5G9zA5H1G/2GOiHOVnQdOrqaZ8vI8IiSgS3JMUrq930zsw==
+  version "1.4.551"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.551.tgz#14db6660a88f66ce095ea2657abe5653bc7f42ed"
+  integrity sha512-/Ng/W/kFv7wdEHYzxdK7Cv0BHEGSkSB3M0Ssl8Ndr1eMiYeas/+Mv4cNaDqamqWx6nd2uQZfPz6g25z25M/sdw==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -6426,9 +6426,9 @@ flatted@^3.2.9:
   integrity sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==
 
 flow-parser@0.*:
-  version "0.218.0"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.218.0.tgz#ec2e446b00eba373c661b4f5ccd9705996278c0a"
-  integrity sha512-mk4e7UK4P/W3tjrJyto6oxPuCjwvRMyzBh72hTl8T0dOcTzkP0M2JJHpncgyhKphMFi9pnjwHfc8e0oe4Uk3LA==
+  version "0.218.1"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.218.1.tgz#a4a5d14c2cfd40dc76649b23f48fb4facd9156f9"
+  integrity sha512-46xpXyI4Bh3K2ej+NF3V5+pAsDlB5P0DWpgIIy/0/R7ujK0syfI/xfKDCOlq2sxtfUyPrr4rxfS2Da7yWdTdwg==
 
 for-each@^0.3.3:
   version "0.3.3"

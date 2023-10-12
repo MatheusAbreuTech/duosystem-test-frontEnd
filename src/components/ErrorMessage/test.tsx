@@ -12,7 +12,7 @@ describe('<ErrorMessage />', () => {
       }
     }
 
-    const { getByText, queryByText } = render(
+    const { getByText, queryByText, container } = render(
       <ErrorMessage errors={errors} field="campoTeste" />
     )
 
@@ -21,6 +21,8 @@ describe('<ErrorMessage />', () => {
 
     const errorMessage2 = queryByText('testeeee')
     expect(errorMessage2).toBeNull
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   test('should not display an error message when there is not an error', () => {

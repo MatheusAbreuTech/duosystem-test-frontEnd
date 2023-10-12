@@ -1,25 +1,12 @@
 import theme from '@/styles/theme'
 import styled from 'styled-components'
+import { ButtonStylesProps } from './types'
 
-type ButtonProps = {
-  color:
-    | 'white'
-    | 'black'
-    | 'darkBlue'
-    | 'lightBlue'
-    | 'blueCyan'
-    | 'red'
-    | 'green'
-    | 'transparent'
-}
-
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonStylesProps>`
   background-color: ${({ color }) =>
     color === 'transparent' ? 'transparent' : theme.colors[color]};
   color: ${({ color }) =>
-    color === 'transparent' || color === 'white'
-      ? theme.colors.darkBlue
-      : theme.colors.white};
+    color === 'transparent' ? theme.colors.darkBlue : theme.colors.white};
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;

@@ -8,5 +8,6 @@ describe('<Main />', () => {
     const { container } = render(<Main />)
 
     expect(container).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

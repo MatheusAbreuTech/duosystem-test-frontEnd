@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-
-interface DescriptionProps {
-  taskisfinished: boolean
-}
+import { DescriptionStylesProps } from './types'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -33,7 +30,7 @@ export const Item = styled.li`
   }
 `
 
-export const Description = styled.p<DescriptionProps>`
+export const Description = styled.p<DescriptionStylesProps>`
   font-size: 1.8rem;
   font-style: ${(props) => (props.taskisfinished ? 'italic' : 'normal')};
   text-decoration: ${(props) =>

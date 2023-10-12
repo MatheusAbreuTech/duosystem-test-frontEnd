@@ -7,6 +7,7 @@ describe('<AddTask />', () => {
     const { container } = render(<AddTask />)
 
     expect(container).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should call the submit function and clear the text field', async () => {
