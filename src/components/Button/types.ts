@@ -13,7 +13,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'transparent'
 }
 
-export type ButtonStylesProps = {
+export interface ButtonStylesProps {
   color:
     | 'white'
     | 'black'

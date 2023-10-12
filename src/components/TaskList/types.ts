@@ -1,5 +1,5 @@
 export type Filters = 'all' | 'status' | 'createdDate'
 
-export type DescriptionStylesProps = {
+export interface DescriptionStylesProps {
   taskisfinished: boolean
 }
