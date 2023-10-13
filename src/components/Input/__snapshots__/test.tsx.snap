@@ -7,7 +7,7 @@ exports[`<Input /> should renders with default values 1`] = `
   padding: 0 1rem;
   background-color: #fff;
   outline: none;
-  border: none;
+  border: 1px solid #383838;
   font-size: 1.6rem;
   border-radius: 5px;
 }

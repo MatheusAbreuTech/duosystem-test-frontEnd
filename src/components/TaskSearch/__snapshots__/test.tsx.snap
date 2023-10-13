@@ -13,6 +13,10 @@ exports[`<SearchTask /> should render the SearchTask component in screen 1`] = `
   border: 1px solid #383838;
 }
 
+.c0 >input {
+  border: none;
+}
+
 .c2 {
   border: none;
   outline: none;
@@ -26,7 +30,7 @@ exports[`<SearchTask /> should render the SearchTask component in screen 1`] = `
   padding: 0 1rem;
   background-color: #fff;
   outline: none;
-  border: none;
+  border: 1px solid #383838;
   font-size: 1.6rem;
   border-radius: 5px;
 }

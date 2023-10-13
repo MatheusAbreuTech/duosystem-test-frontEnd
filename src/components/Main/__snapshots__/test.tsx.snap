@@ -61,7 +61,7 @@ exports[`<Main /> should render the Main component in screen 1`] = `
   padding: 0 1rem;
   background-color: #fff;
   outline: none;
-  border: none;
+  border: 1px solid #383838;
   font-size: 1.6rem;
   border-radius: 5px;
 }
@@ -100,6 +100,10 @@ exports[`<Main /> should render the Main component in screen 1`] = `
   align-items: center;
   justify-content: space-between;
   border: 1px solid #383838;
+}
+
+.c2 >input {
+  border: none;
 }
 
 .c4 {
