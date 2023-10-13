@@ -11,6 +11,10 @@ export const Wrapper = styled.form`
   align-items: center;
   justify-content: space-between;
   border: 1px solid ${theme.colors.black};
+
+  > input {
+    border: none;
+  }
 `
 
 export const ButtonSearch = styled.button`

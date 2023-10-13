@@ -20,7 +20,7 @@ const Template: StoryFn = () => {
 
   return (
     <FormProvider {...methods}>
-      <Input name="taskDescription" style={{ border: `1px solid #000` }} />
+      <Input name="taskDescription" />
     </FormProvider>
   )
 }
